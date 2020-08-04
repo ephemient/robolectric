@@ -1814,7 +1814,7 @@ public class ShadowApplicationPackageManager extends ShadowPackageManager {
       PersistableBundle launcherExtras,
       String dialogMessage,
       Object dialogInfo) {
-    if (hasProfileOwnerOrDeviceOwnerOnCurrentUser()) {
+    if (hasProfileOwnerOrDeviceOwnerOnCurrentUser() && VERSION.SDK_INT < VERSION_CODES.Q) {
       throw new UnsupportedOperationException();
     }
     ArrayList<String> unupdatedPackages = new ArrayList<>();
